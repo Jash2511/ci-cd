@@ -26,8 +26,16 @@ jobs:
         run: uname -a
       - name: Your Name
         run: echo "you are jd"
-  gooodBye:
-    runs-on: alpine-latest
+  secrets-demo:
+    runs-on: ubuntu-latest
     steps:
-      - name: Print os details
-        run: uname -a
+      - name: Check secret
+        env:
+          DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
+        run: |
+          if [ -n "$DEMO_SECRET" ]; then
+            echo "Secret is available."
+          else
+            echo "Secret is not configured."
+            exit 1
+          fi
