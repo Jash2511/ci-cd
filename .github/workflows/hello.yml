@@ -13,3 +13,19 @@ jobs:
         run: uname -a
       - name: Your Name
         run: echo "you are jd"
+  bye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "Hello from GitHub Actions!"
+      - name: Show date
+        run: date
+      - name: Show operating system
+        run: uname -a
+      - name: Your Name
+        run: echo "you are jd"
+  gooodBye:
+    runs-on: alpine-latest
+    steps:
+      - name: Print os details
+        run: uname -a
